@@ -1,0 +1,17 @@
+{
+  "name": "basic-express-template",
+  "version": "1.0.0",
+  "description": "A basic starting point for an express application, with no templating engine or front end client",
+  "main": "app.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "keywords": [
+    "sammy",
+    "is",
+    "really",
+    "cool"
+  ],
+  "author": "Sammy Justice Roberts",
+  "license": "ISC"
+}
