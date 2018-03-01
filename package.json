@@ -4,7 +4,8 @@
   "description": "A basic starting point for an express application, with no templating engine or front end client",
   "main": "app.js",
   "scripts": {
-    "test": "npm test"
+    "test": "npm test",
+    "start": "node app"
   },
   "keywords": [
     "sammy",
@@ -13,5 +14,8 @@
     "cool"
   ],
   "author": "Sammy Justice Roberts",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
 }

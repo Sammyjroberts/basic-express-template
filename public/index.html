@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>title</title>
+    <meta name="author" content="name">
+    <meta name="description" content="description here">
+    <meta name="keywords" content="keywords,here">
+    <link rel="stylesheet" href="./assets/bower_components/bootstrap/dist/css/bootstrap.min.css" type="text/css">
+
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto" type="text/css">
+    <link rel="stylesheet" href="./assets/css/styles.css" type="text/css">
+</head>
+<body>
+<div class="container">
+    <div class="jumbotron">
+        <h1>Index!</h1>
+        <p>...</p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+    </div>
+    <div class="row" id="results">
+
+    </div>
+</div>
+
+    <script src="./assets/bower_components/jquery/dist/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $.get("https://jsonplaceholder.typicode.com/posts")
+                .then(function (resp) {
+                    var resultsDiv = $("#results");
+                    resp.forEach(function(post) {
+                        var postDiv = $("<div class='panel panel-default'>");
+                        var postHeader = $("<div class=\"panel-heading\">").text(post.title);
+                        var postBody = $("<div class=\"panel-body\">").text(post.body);
+                        var infoDiv = $("<div class=\"panel-footer\">").text("Post ID: " + post.id + " By User: " + post.userId);
+                        postDiv.append(postHeader, postBody, infoDiv);
+                        resultsDiv.append(postDiv);
+                    })
+
+                })
+                .catch(function(err) {
+                    console.error(err);
+                })
+        });
+    </script>
+</body>
+</html>
